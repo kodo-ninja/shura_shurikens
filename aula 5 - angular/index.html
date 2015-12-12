@@ -3,15 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>Shura Shurikens</title>
-  <style media="screen">
+  <style>
+    .shuriken.js-detalhe-visivel figcaption {
+      display: block;
+    }
 
-  .shuriken.js-detalhe-visivel figcaption{
-    display: block;
-  }
-
-  .shuriken figcaption{
-    display: none;
-  }
+    .shuriken figcaption {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -37,32 +36,18 @@
     </section>
     <section id="itens">
       <h2>Shurikens</h2>
-      <ul class="shurikens">
-        <li id="shuriken01" class="shuriken">
+
+      <ul class="shurikens" ng-controller="ShurikensController">
+        <li ng-repeat="item in itens" class="shuriken" ng-click="toggleItem(item);" ng-class="{'js-detalhe-visivel': item.visivel}">
           <figure>
-            <img src="imagens/shuriken01.jpg" alt="Shuriken hachi">
-            <figcaption>Shuriken Hachi</figcaption>
-          </figure>
-        <li id="shuriken02" class="shuriken">
-          <figure>
-            <img src="imagens/shuriken02.jpg" alt="Shuriken Kuraidesu">
-            <figcaption>Shuriken Kuraidesu</figcaption>
-          </figure>
-        </li>
-        <li id="shuriken03" class="shuriken">
-          <figure>
-            <img src="imagens/shuriken03.jpg" alt="Shuriken Toge">
-            <figcaption>Shuriken Toge</figcaption>
-          </figure>
-        </li>
-        <li id="shuriken04" class="shuriken">
-          <figure>
-            <img src="imagens/shuriken04.jpg" alt="Shuriken Sokudo">
-            <figcaption>Shuriken Sokudo</figcaption>
+            <img ng-src="{{item.imagem}}" alt="{{item.nome}}">
+            <figcaption>{{item.descricao}}</figcaption>
           </figure>
         </li>
       </ul>
+
       <h3>Mais vendidos</h3>
+
       <ol>
         <li>Shuriken Sokudo</li>
         <li>Shuriken Kuraidesu</li>
