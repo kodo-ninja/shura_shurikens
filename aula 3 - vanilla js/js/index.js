@@ -1,9 +1,9 @@
 "use strict";
 
-var shurikens = document.getElementsByClassName("shuriken");
-
 var NOME_CLASSE_VISIVEL = "js-detalhe-visivel";
 var NOME_CLASSE_SHURIKEN = "shuriken";
+
+var shurikens = document.getElementsByClassName(NOME_CLASSE_SHURIKEN);
 
 for (var i = 0, len = shurikens.length; i < len; i++) {
   shurikens[i].addEventListener('click', function() {
